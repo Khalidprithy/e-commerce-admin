@@ -32,10 +32,6 @@ engine-strict=true
 
 ## EsLint config
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Learn More
-
 ```
 {
   "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
@@ -47,6 +43,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
   }
 }
 ```
+
+# Prettier
+
+```
+{
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+}
+```
+
+
 
 ## Deploy on Vercel
 
