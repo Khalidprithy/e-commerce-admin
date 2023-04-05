@@ -1,5 +1,3 @@
-
-
 ## Getting Started
 
 First, run the development server:
@@ -8,25 +6,47 @@ First, run the development server:
 npm run dev
 ```
 
-# node version 
+# node version
 
 .nvmrc
+
 ```
 lts/fermium
 ```
 
 .npmrc
+
 ```
 engine-strict=true
 ```
 
+## Engine Config
+
+```
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=8.19.3",
+    "yarn": "Please use npm"
+  },
+```
+
+## EsLint config
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-
 
 ## Learn More
 
-
+```
+{
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "globals": {
+    "React": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
+  }
+}
+```
 
 ## Deploy on Vercel
 
