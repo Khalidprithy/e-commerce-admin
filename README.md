@@ -55,6 +55,10 @@ engine-strict=true
 }
 ```
 
+```
+npm install --save-dev @commitlint/config-conventional @commitlint/cli
+```
+
 
 
 ## Deploy on Vercel
