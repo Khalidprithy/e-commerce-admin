@@ -1,30 +1,33 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import AdminHeader from '../common/AdminHeader';
-import Sidebar from "../common/Sidebar";
-
+import Sidebar from '../common/Sidebar';
 
 const SidebarLayout = ({ children, title }) => {
-    return (
-        <div className="">
-            <Head>
-                <title>{title}</title>
-            </Head>
-            <div className="flex">
-                <div className="w-2/12 bg-green-200">
-                    <Sidebar />
-                </div>
-                <main className="w-10/12 bg-red-200">
-                    <AdminHeader />
-                    {children}
-                </main>
-            </div>
+  return (
+    <div className="">
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <div className="">
+        <div className="w-16 md:w-40 bg-green-200 transition-all ease-in-out duration-500">
+          <Sidebar />
         </div>
-    );
+        <main className="ml-16 md:ml-40 transition-all ease-in-out duration-500">
+          <AdminHeader />
+          {children}
+        </main>
+      </div>
+    </div>
+  );
 };
 
 SidebarLayout.propTypes = {
-    children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default SidebarLayout;
+
+SidebarLayout.defaultProps = {
+  title: 'E-Commerce',
+};

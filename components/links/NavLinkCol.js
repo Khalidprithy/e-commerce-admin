@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export default function NavLink({ href, children }) {
+export default function NavLinkCol({ href, children }) {
     const { pathname } = useRouter();
     let active = href === pathname;
     console.log(pathname, active);
 
     return (
         <Link
-            className={`p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer  ${active ? 'text-green-500 border-opacity-100' : ''
+            className={`p-2 font-medium hover:text-green-500 duration-200 cursor-pointer  ${active ? 'text-green-500' : ''
                 } `}
             href={href}
         >
