@@ -32,10 +32,11 @@ const Register = () => {
                     Register
                 </h4>
                 <form onSubmit={handleSubmit(SignUp)}>
-                    <div className="form-control w-full">
+                    <div className="form-control w-full relative">
                         <input
                             type="number"
-                            className={`input input-bordered w-full ${errors.phone &&
+                            placeholder='Phone number'
+                            className={`input input-bordered w-full pl-14 text-[18px] ${errors.phone &&
                                 'focus:border-red-600 focus:ring-red-600 border-2 border-red-600'
                                 }`}
                             {...register('phone', {
@@ -44,6 +45,9 @@ const Register = () => {
                                 maxLength: 16,
                             })}
                         />
+                        <div className="text-2xl absolute top-2 left-2 cursor-pointer">
+                            <h4 className='text-[18px] text-gray-500'>+880</h4>
+                        </div>
                         <label className="label">
                             {errors.phone?.type === 'required' && (
                                 <span className="label-text text-base font-semibold text-red-700">
@@ -60,6 +64,7 @@ const Register = () => {
                     <div className="form-control w-full relative">
                         <input
                             type={passwordShow ? 'text' : 'password'}
+                            placeholder='Password'
                             className={`input input-bordered w-full ${errors.phone &&
                                 'focus:border-red-600 focus:ring-red-600 border-2 border-red-600'
                                 }`}

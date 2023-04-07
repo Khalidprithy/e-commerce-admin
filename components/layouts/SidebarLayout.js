@@ -13,8 +13,8 @@ const SidebarLayout = ({ children, title }) => {
         <div className="w-16 md:w-40 bg-green-200 transition-all ease-in-out duration-500">
           <Sidebar />
         </div>
-        <main className="ml-16 md:ml-40 transition-all ease-in-out duration-500">
-          <AdminHeader />
+        <AdminHeader />
+        <main className="pt-20 ml-16 md:ml-40 transition-all ease-in-out duration-500">
           {children}
         </main>
       </div>

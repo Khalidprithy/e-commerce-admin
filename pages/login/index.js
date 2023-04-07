@@ -2,10 +2,12 @@ import AuthLayout from '@/components/layouts/AuthLayout';
 import { MyContext } from '@/context/AuthContext';
 import Link from 'next/link';
 import { useContext, useState } from 'react';
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { FaHome } from 'react-icons/fa';
 
 const Login = () => {
 
+    const [passwordShow, setPasswordShow] = useState(false);
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
 
@@ -32,30 +34,47 @@ const Login = () => {
                     Login
                 </h4>
                 <form onSubmit={handleSubmit}>
-                    <div className="form-control w-full">
+                    <div className="form-control w-full relative">
                         <input
-                            type="tel"
+                            type="number"
                             name="phone"
                             id="phone"
-                            className="input input-bordered w-full mb-4"
+                            placeholder='Phone number'
+                            className="input input-bordered w-full pl-14 text-[18px] mb-4"
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
                             minLength="8"
                             maxLength="16"
                             required
                         />
+                        <div className="text-2xl absolute top-2 left-2 cursor-pointer">
+                            <h4 className='text-[18px] text-gray-500'>+880</h4>
+                        </div>
                     </div>
 
-                    <div className="form-control w-full">
+                    <div className="form-control w-full relative">
                         <input
-                            type="password"
+                            type={passwordShow ? 'text' : 'password'}
                             name="password"
                             id="password"
+                            placeholder='Password'
                             className="input input-bordered w-full mb-4"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
+
+                        <div className="text-2xl absolute top-3 right-2 cursor-pointer">
+                            {passwordShow === false ? (
+                                <AiFillEyeInvisible
+                                    onClick={() => setPasswordShow(!passwordShow)}
+                                ></AiFillEyeInvisible>
+                            ) : (
+                                <AiFillEye
+                                    onClick={() => setPasswordShow(!passwordShow)}
+                                ></AiFillEye>
+                            )}
+                        </div>
                     </div>
                     <button type="submit" className="btn btn-outline w-full">Login</button>
                 </form>

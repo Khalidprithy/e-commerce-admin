@@ -1,4 +1,4 @@
-import PrimaryLayout from '@/components/layouts/PrimaryLayout';
+import AuthLayout from '@/components/layouts/AuthLayout';
 import Link from 'next/link';
 
 const NotFound = () => {
@@ -17,7 +17,7 @@ const NotFound = () => {
 };
 
 NotFound.getLayout = (page) => (
-  <PrimaryLayout title={'404'}>{page}</PrimaryLayout>
+  <AuthLayout title={'404'}>{page}</AuthLayout>
 );
 
 export default NotFound;
