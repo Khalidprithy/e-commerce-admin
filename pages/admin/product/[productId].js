@@ -1,50 +1,50 @@
-import SidebarLayout from "@/components/layouts/SidebarLayout";
-import axios from "axios";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import SidebarLayout from '@/components/layouts/SidebarLayout';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 const ProductDetail = () => {
+  const router = useRouter();
 
-    const router = useRouter();
+  const productId = router.query.productId;
 
-    const productId = router.query.productId;
+  const [product, setProduct] = useState(null);
 
-    const [product, setProduct] = useState(null);
-
+  useEffect(() => {
     async function fetchProductDetails() {
-        try {
-            const response = await axios.get(`http://localhost:5000/api/products/${productId}`);
-            setProduct(response.data);
-        } catch (error) {
-            console.error(error);
-        }
+      try {
+        const response = await axios.get(
+          `https://e-commerce-admin-fv58.onrender.com/api/products/${productId}`
+        );
+        setProduct(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     }
 
-    useEffect(() => {
-        fetchProductDetails();
-    }, []);
+    fetchProductDetails();
+  }, [productId]);
 
-
-    return (
-        <div className="p-4">
-            <div className="card lg:card-side bg-base-100 shadow-md rounded-md">
-                <figure><img src="/images/stock/photo-1494232410401-ad00d5433cfa.jpg" alt="Album" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">{product?.title}</h2>
-                    <p>{product?.tagLine}</p>
-                    <p>{product.description}</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-outline rounded-md btn-sm">Action</button>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="p-4">
+      <div className="card lg:card-side bg-base-100 shadow-md rounded-md">
+        <div className="card-body">
+          <h2 className="card-title">{product?.title}</h2>
+          <p>{product?.tagline}</p>
+          <p>{product?.description}</p>
+          <div className="card-actions justify-end">
+            <button className="btn btn-outline rounded-md btn-sm">
+              Action
+            </button>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 ProductDetail.getLayout = (page) => (
-    <SidebarLayout title={'Product Details'}>{page}</SidebarLayout>
+  <SidebarLayout title={'Product Details'}>{page}</SidebarLayout>
 );
-
 
 export default ProductDetail;

@@ -1,9 +1,8 @@
-import { MyContext } from "@/context/AuthContext";
-import { useContext } from "react";
-import NavLinkCol from "../links/NavLinkCol";
+import { MyContext } from '@/context/AuthContext';
+import { useContext } from 'react';
+import NavLinkCol from '../links/NavLinkCol';
 
 export default function AdminHeader() {
-
   const { Logout } = useContext(MyContext);
 
   return (
@@ -31,8 +30,10 @@ export default function AdminHeader() {
 
               <button
                 onClick={Logout}
-                className='btn btn-sm btn-outline w-10/12 mx-auto mb-2 mt-4 rounded-md text-white hover:text-red-600'>Logout</button>
-
+                className="btn btn-sm btn-outline w-10/12 mx-auto mb-2 mt-4 rounded-md text-white hover:text-red-600"
+              >
+                Logout
+              </button>
             </ul>
           </div>
         </div>

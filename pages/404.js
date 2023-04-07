@@ -16,8 +16,6 @@ const NotFound = () => {
   );
 };
 
-NotFound.getLayout = (page) => (
-  <AuthLayout title={'404'}>{page}</AuthLayout>
-);
+NotFound.getLayout = (page) => <AuthLayout title={'404'}>{page}</AuthLayout>;
 
 export default NotFound;

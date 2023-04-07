@@ -1,12 +1,9 @@
-import { MyContext } from '@/context/AuthContext';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React from 'react';
 import { BsFillCartCheckFill } from 'react-icons/bs';
 import { IoIosPaper } from 'react-icons/io';
 import { MdDashboard, MdPeopleAlt } from 'react-icons/md';
 export default function Sidebar() {
-  const { userToken } = useContext(MyContext);
-
   const mainMenu = [
     {
       id: '13245sada',
@@ -62,7 +59,6 @@ export default function Sidebar() {
             </Link>
           </li>
         ))}
-
       </ul>
     </div>
   );
