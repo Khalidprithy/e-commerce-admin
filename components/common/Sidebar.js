@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { BsFillCartCheckFill } from 'react-icons/bs';
+import { FaShoppingBasket } from 'react-icons/fa';
 import { IoIosPaper } from 'react-icons/io';
 import { MdDashboard, MdPeopleAlt } from 'react-icons/md';
 export default function Sidebar() {
@@ -16,8 +17,8 @@ export default function Sidebar() {
       id: '1324gfdsasada',
       name: 'Product',
       path: '/admin/product',
-      icon: IoIosPaper,
-      color: '#D35400 ',
+      icon: FaShoppingBasket,
+      color: '#27AE60 ',
     },
     {
       id: '13245dsasada',

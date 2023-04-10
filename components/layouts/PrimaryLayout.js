@@ -3,24 +3,22 @@ import PropTypes from 'prop-types';
 import Footer from '../common/Footer';
 import TopBar from '../common/TopBar';
 
-const PrimaryLayout = ({ children, title }) => {
+const PrimaryLayout = ({ children, title = 'E-Commerce' }) => {
   return (
-    <div>
+    <>
       <TopBar />
       <Head>
         <title>{title}</title>
       </Head>
-      <main className="m-4 p-4 border-[16px] border-green-300">{children}</main>
+      <main className="m-4 p-4">{children}</main>
       <Footer />
-    </div>
+    </>
   );
 };
+
 PrimaryLayout.propTypes = {
   children: PropTypes.node,
+  title: PropTypes.string,
 };
 
 export default PrimaryLayout;
-
-PrimaryLayout.defaultProps = {
-  title: 'E-Commerce',
-};

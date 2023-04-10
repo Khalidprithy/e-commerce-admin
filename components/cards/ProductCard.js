@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="card card-compact w-72 md:w-96 bg-base-100 rounded-md shadow-md hover:shadow-lg">
+    <div className="card card-compact min-w-max bg-base-100 rounded-md shadow-md hover:shadow-lg">
       <div className="card-body">
         <h2 className="card-title">{product.title}</h2>
         <p>{product.tagline}</p>

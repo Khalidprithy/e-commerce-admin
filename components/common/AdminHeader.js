@@ -26,7 +26,7 @@ export default function AdminHeader() {
               tabIndex={0}
               className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-gray-700 text-gray-50 rounded-md w-52"
             >
-              <NavLinkCol href="/admin">Profile</NavLinkCol>
+              <NavLinkCol href="/admin/profile">Profile</NavLinkCol>
 
               <button
                 onClick={Logout}

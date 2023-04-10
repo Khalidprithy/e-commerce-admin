@@ -5,14 +5,10 @@ import useProduct from '@/hooks/useProduct';
 const Product = () => {
   const [products] = useProduct();
 
-  console.log(products);
 
   return (
     <div className="p-4">
-      <h4 className="text-xl text-center font-medium p-2">
-        This is Admin Product
-      </h4>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {products?.slice(0, 12).map((product) => (
           <ProductCard key={product._id} product={product}></ProductCard>
         ))}

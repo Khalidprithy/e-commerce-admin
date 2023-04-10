@@ -1,6 +1,11 @@
 import SidebarLayout from '@/components/layouts/SidebarLayout';
+import { useStats } from '@/hooks/useStats';
 
 const Dashboard = () => {
+
+  const [statsData] = useStats();
+  console.log(statsData);
+
   return (
     <div>
       <h4 className="">This is Admin Dashboard</h4>
@@ -9,7 +14,7 @@ const Dashboard = () => {
 };
 
 Dashboard.getLayout = (page) => (
-  <SidebarLayout title={'Admin'}>{page}</SidebarLayout>
+  <SidebarLayout title={'Admin Dashboard'}>{page}</SidebarLayout>
 );
 
 export default Dashboard;
