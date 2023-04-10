@@ -56,5 +56,9 @@
   },
   "resolutions": {
     "webpack": "^5"
+  },
+  "browser": {
+    "crypto": false,
+    "stream": false
   }
 }
