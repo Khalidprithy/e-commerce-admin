@@ -50,8 +50,8 @@ function MyContextProvider(props) {
       setUser(userData);
       setTempUser(userData);
       setUserToken(userData.token);
-      Cookies.set('shopInUser', JSON.stringify(userData));
-      Cookies.set('userToken', JSON.stringify(userData.token));
+      Cookies.set('shopInUser', JSON.stringify(userData), { secure: true });
+      Cookies.set('userToken', JSON.stringify(userData.token), { secure: true });
       router.push(userData.isAdmin ? '/admin' : '/');
     } else {
       toast.error(userData.message);
@@ -82,7 +82,7 @@ function MyContextProvider(props) {
     if (response.status === 201) {
       setUser(userData.token);
       setUserToken(userData.token);
-      Cookies.set('userToken', JSON.stringify(userData.token));
+      Cookies.set('userToken', JSON.stringify(userData.token), { secure: true });
       router.push('/');
     } else {
       toast.error(userData.message);
@@ -94,8 +94,8 @@ function MyContextProvider(props) {
   const Logout = async () => {
     setUser(null);
     setUserToken(null);
-    Cookies.remove('shopInUser');
-    Cookies.remove('userToken');
+    Cookies.remove('shopInUser', { secure: true });
+    Cookies.remove('userToken', { secure: true });
     router.push('/');
   };
 
